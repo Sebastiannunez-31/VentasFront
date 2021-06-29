@@ -1,0 +1,20 @@
+
+
+<mat-drawer-container autosize style="position: absolute;right: 0px;left: 0px;bottom: 0px;top: 0px;">
+  <mat-drawer #drawer mode="push">
+    <button  class="boton" mat-raised-button color="primary" [routerLink]="['/home']"(click)="drawer.close()">Inicio</button><br>
+    
+    <button class="boton" mat-raised-button color="primary"[routerLink]="['/cliente']" (click)="drawer.close()">Cliente</button> <br>
+    <button class="boton" mat-raised-button color="primary"[routerLink]="['/venta']" (click)="drawer.close()">Venta</button> <br>
+    <button class="boton" mat-raised-button color="primary"  (click)="logout()" (click)="drawer.close()" *ngIf="usuario">Cerrar Sesion</button>
+  </mat-drawer>
+
+  <div>
+    <button mat-raised-button color="primary" class="menu"  (click)="drawer.toggle();" >MENU</button>
+    <router-outlet></router-outlet>
+
+  </div>
+
+
+
+</mat-drawer-container>
